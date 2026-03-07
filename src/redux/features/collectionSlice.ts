@@ -1,15 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { toast, Zoom } from 'react-toastify';
+import { MediaItem } from "../../types/types";
 
-const initialState = {
-    items: JSON.parse(localStorage.getItem('collection')) || []
+interface CollectionState {
+    items: MediaItem[];
+}
+
+const initialState: CollectionState = {
+    items: JSON.parse(localStorage.getItem('collection') || '[]')
 }
 
 const collectionSlice = createSlice({
     name: 'collection',
     initialState,
     reducers: {
-        addCollection: (state, action) => {
+        addCollection: (state, action: PayloadAction<MediaItem>) => {
             const alreadyExists = state.items.find(
                 item => item.id === action.payload.id
             )
@@ -18,16 +23,13 @@ const collectionSlice = createSlice({
                 localStorage.setItem('collection', JSON.stringify(state.items))
             }
         },
-        removeCollection: (state, action) => {
-            console.log('removed');
-            
+        removeCollection: (state, action: PayloadAction<string | number>) => {
             state.items = state.items.filter(
                 item => item.id !== action.payload
             )
-            console.log(state.items);
-            
             localStorage.setItem('collection', JSON.stringify(state.items))
         },
+
         clearCollection: (state) => {
             state.items = []
             localStorage.removeItem('collection')
