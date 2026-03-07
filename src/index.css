@@ -1,17 +1,39 @@
 @import "tailwindcss";
 
-#bottom{
-    background: linear-gradient(transparent,black);
+@font-face {
+    font-family: 'Manrope';
+    src: url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 }
 
-*{
-    font-family: 'helvetica neue';
+:root {
+    --primary: #0d7ff2;
+    --background-dark: #101922;
 }
 
-:root{
-    --c1:rgb(7, 35, 67);
-    --c2:rgb(20, 65, 117);
-    --c3:rgb(29, 84, 108);
-    --c4:rgb(244, 244, 244);
+* {
+    font-family: 'Manrope', 'helvetica neue', sans-serif;
+}
 
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.masonry {
+    column-count: 3;
+    column-gap: 1.5rem;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1024px) { .masonry { column-count: 2; } }
+@media (max-width: 640px) { .masonry { column-count: 1; } }
+
+#bottom {
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
 }

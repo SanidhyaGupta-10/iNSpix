@@ -13,14 +13,14 @@ const CollectionPage = () => {
   }
 
   return (
-    <div className="overflow-auto px-5 md:px-10 py-6">
+    <div className="overflow-auto px-5 md:px-10 py-24 min-h-screen max-w-7xl mx-auto">
       {collection.length > 0 ? (
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-          <h2 className="text-3xl font-bold text-white border-l-4 border-indigo-600 pl-4">
+          <h2 className="text-3xl font-extrabold text-white border-l-4 border-blue-600 pl-4 tracking-tight">
             Your Collection
           </h2>
-          <button 
-            onClick={clearAll} 
+          <button
+            onClick={clearAll}
             className="active:scale-95 transition cursor-pointer bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg font-bold rounded-lg shadow-lg"
           >
             Clear Collection

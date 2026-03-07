@@ -9,29 +9,50 @@ const SearchBar = () => {
     const submitHandler = (e: React.FormEvent) => {
         e.preventDefault()
         dispatch(setQuery(text))
-        // setText('') // Keeping text for better UX
     }
 
     return (
-        <div>
-            <form onSubmit={submitHandler} className='flex bg-gray-900 gap-5 py-8 md:py-10 px-5 md:px-10'>
+        <div className="mx-auto max-w-2xl px-5">
+            <form onSubmit={submitHandler} className='glass flex w-full items-stretch rounded-xl p-2 shadow-2xl'>
+                <div className="flex items-center justify-center pl-4 text-slate-400">
+                    <span className="material-symbols-outlined">search</span>
+                </div>
                 <input
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     required
-                    className='w-full border-2 border-gray-700 bg-gray-800 text-white px-6 py-3 text-lg md:text-xl rounded outline-none focus:border-blue-500 transition'
+                    className='w-full border-none bg-transparent px-4 py-4 text-white placeholder-slate-400 focus:ring-0 text-lg outline-none'
                     type="text"
-                    placeholder='Search anything (photos, videos, gifs)...' />
+                    placeholder='Search high-resolution media...'
+                />
 
                 <button
                     type="submit"
-                    className='active:scale-95 cursor-pointer border-2 border-blue-600 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg md:text-xl rounded outline-none transition font-semibold'
+                    className='rounded-lg bg-blue-600 px-8 text-white font-bold transition-all hover:bg-blue-500 shadow-lg shadow-blue-500/20 active:scale-95'
                 >
                     Search
                 </button>
             </form>
+
+            <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs font-medium text-slate-400">
+                <span>Trending:</span>
+                {['Nature', 'Architecture', 'Travel', 'Minimal'].map((tag) => (
+                    <button
+                        key={tag}
+                        type="button"
+                        onClick={() => {
+                            setText(tag)
+                            dispatch(setQuery(tag))
+                        }}
+                        className="hover:text-white underline underline-offset-4 decoration-blue-500/50 transition-colors"
+                    >
+                        {tag}
+                    </button>
+                ))}
+            </div>
         </div>
     )
 }
 
 export default SearchBar
+
