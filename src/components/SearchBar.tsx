@@ -12,45 +12,24 @@ const SearchBar = () => {
     }
 
     return (
-        <div className="mx-auto max-w-2xl px-5">
-            <form onSubmit={submitHandler} className='glass flex w-full items-stretch rounded-xl p-2 shadow-2xl'>
-                <div className="flex items-center justify-center pl-4 text-slate-400">
-                    <span className="material-symbols-outlined">search</span>
-                </div>
+        <form onSubmit={submitHandler} className="w-full max-w-xl group">
+            <div className="glass-search p-2 rounded-full flex items-center shadow-[0_0_40px_rgba(139,92,246,0.1)] transition-all duration-300 hover:border-[#a078ff]/50 hover:shadow-[0_0_50px_rgba(139,92,246,0.2)]">
+                <span className="material-symbols-outlined text-[#958ea0] ml-4 mr-2">search</span>
                 <input
+                    type="text"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
-                    required
-                    className='w-full border-none bg-transparent px-4 py-4 text-white placeholder-slate-400 focus:ring-0 text-lg outline-none'
-                    type="text"
-                    placeholder='Search high-resolution media...'
+                    className="flex-1 bg-transparent border-none text-white placeholder-[#958ea0] focus:ring-0 text-base"
+                    placeholder="Search the archive..."
                 />
-
-                <button
+                <button 
                     type="submit"
-                    className='rounded-lg bg-blue-600 px-8 text-white font-bold transition-all hover:bg-blue-500 shadow-lg shadow-blue-500/20 active:scale-95'
+                    className="shimmer bg-white text-black px-10 py-3.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] hover:scale-[1.03] transition-all duration-300 shadow-2xl"
                 >
-                    Search
+                    Explore
                 </button>
-            </form>
-
-            <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs font-medium text-slate-400">
-                <span>Trending:</span>
-                {['Nature', 'Architecture', 'Travel', 'Minimal'].map((tag) => (
-                    <button
-                        key={tag}
-                        type="button"
-                        onClick={() => {
-                            setText(tag)
-                            dispatch(setQuery(tag))
-                        }}
-                        className="hover:text-white underline underline-offset-4 decoration-blue-500/50 transition-colors"
-                    >
-                        {tag}
-                    </button>
-                ))}
             </div>
-        </div>
+        </form>
     )
 }
 

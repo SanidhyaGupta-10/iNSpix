@@ -17,23 +17,33 @@ const ResultCard: React.FC<ResultCardProps> = ({ item }) => {
     }
 
     return (
-        <div className='w-full sm:w-[45vw] md:w-[28vw] lg:w-[18vw] relative h-80 bg-gray-900 rounded-xl overflow-hidden group shadow-lg'>
-            <a target='_blank' rel="noreferrer" className='h-full block' href={item.url}>
-                {item.type === 'photo' && <img className='h-full w-full object-cover object-center transition duration-500 group-hover:scale-110' src={item.src} alt={item.title} />}
-                {item.type === 'video' && <video className='h-full w-full object-cover object-center transition duration-500 group-hover:scale-110' autoPlay loop muted src={item.src}></video>}
-                {item.type === 'gif' && <img className='h-full w-full object-cover object-center transition duration-500 group-hover:scale-110' src={item.src} alt={item.title} />}
+        <div className='masonry-item relative bg-[#0e0e0e] rounded-3xl overflow-hidden group border border-white/5 transition-all duration-500 hover:border-[#a078ff]/30 hover:shadow-[0_0_40px_rgba(139,92,246,0.1)]'>
+            <a target='_blank' rel="noreferrer" className='block overflow-hidden' href={item.url}>
+                {item.type === 'photo' && <img className='w-full object-cover object-center transition duration-700 group-hover:scale-110' src={item.src} alt={item.title} />}
+                {item.type === 'video' && <video className='w-full object-cover object-center transition duration-700 group-hover:scale-110' autoPlay loop muted src={item.src}></video>}
+                {item.type === 'gif' && <img className='w-full object-cover object-center transition duration-700 group-hover:scale-110' src={item.src} alt={item.title} />}
             </a>
-            <div id='bottom' className='flex justify-between gap-3 items-center w-full px-4 py-4 absolute bottom-0 bg-black/60 backdrop-blur-sm text-white translate-y-2 group-hover:translate-y-0 transition duration-300'>
-                <h2 className='text-sm md:text-base font-semibold capitalize truncate' title={item.title}>{item.title}</h2>
+            
+            {/* Action Bar */}
+            <div className='absolute inset-x-4 bottom-4 glass rounded-[1.25rem] p-4 flex justify-between items-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500'>
+                <div className="flex-1 min-w-0 mr-3">
+                    <h2 className='text-xs font-bold text-white truncate uppercase tracking-tight' title={item.title}>{item.title}</h2>
+                    <p className="text-[9px] text-[#d0bcff] font-bold uppercase tracking-[0.2em] mt-1">{item.type}</p>
+                </div>
                 <button
                     onClick={(e) => {
                         e.preventDefault()
                         addToCollection(item)
                     }}
-                    className='bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white rounded px-4 py-1.5 cursor-pointer font-medium text-sm transition shrink-0'
+                    className='bg-[#a078ff] text-[#340080] hover:scale-105 active:scale-95 rounded-xl px-5 py-2 cursor-pointer font-bold text-[10px] uppercase tracking-widest transition-all shrink-0 shadow-[0_0_15px_rgba(160,120,255,0.3)]'
                 >
-                    Save
+                    Collect
                 </button>
+            </div>
+
+            {/* Type Badge */}
+            <div className="absolute top-4 right-4 glass px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <span className="text-[9px] font-bold text-white uppercase tracking-widest">{item.type}</span>
             </div>
         </div>
     )

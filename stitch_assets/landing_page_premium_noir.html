@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>iNSpix | Stunning Royalty-Free Images</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FFFFFF",
+                        "noir-black": "#000000",
+                        "noir-gray-dark": "#1A1A1A",
+                        "noir-gray-light": "#333333",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-search {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .masonry {
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        @media (max-width: 1024px) { .masonry { column-count: 2; } }
+        @media (max-width: 640px) { .masonry { column-count: 1; } }
+        
+        /* Premium Noir typography tweaks */
+        h1, h2 {
+            letter-spacing: -0.04em;
+        }
+        .nav-link {
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="bg-noir-black font-display text-white transition-colors duration-300 selection:bg-white selection:text-black">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="fixed top-0 z-50 w-full glass border-b border-white/5 px-6 py-4 lg:px-20">
+<div class="mx-auto flex max-w-7xl items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-2xl font-light">camera</span>
+<h2 class="text-xl font-bold tracking-widest text-white uppercase">iNSpix</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-10">
+<a class="nav-link text-[10px] font-bold hover:text-white/70 transition-colors" href="#">Discover</a>
+<a class="nav-link text-[10px] font-bold hover:text-white/70 transition-colors" href="#">Collections</a>
+<a class="nav-link text-[10px] font-bold hover:text-white/70 transition-colors" href="#">API</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="hidden sm:block text-[10px] nav-link font-bold hover:text-white/70 transition-colors">Log in</button>
+<button class="rounded-none bg-white px-6 py-2 text-[10px] font-bold text-black uppercase tracking-widest hover:bg-white/90 transition-all">
+                        Join
+                    </button>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative flex min-h-screen flex-col items-center justify-center px-4">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black z-10"></div>
+<img alt="Scenic mountain landscape" class="h-full w-full object-cover grayscale opacity-80" data-alt="Scenic mountain landscape at sunrise with fog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi8EvUtj-59wR0LvtfvKlh61QhMHo0k0woQQftMisrHZvgwNkB3hBLvCnN8ZzwgGugcJZSyXLoaPbeOgm7Sv9iWOstijVI1rL8hCjZ1OPA_p6MeAmZxMODhuVK6wKU1SodOCqTlr4KVDAKbpXqfG0x9VuBzrcV4wTi93oS55BHE1IzcNL_GTHKehneS9z9eNrbsBIQrgaZVJTbQN1HPWMymldkcyCO6Rb1slO1S2F_9Oo9ULs2K4stY-bfyhjefWjJ-m9vz-OI3oDy"/>
+</div>
+<div class="relative z-20 w-full max-w-5xl text-center space-y-12">
+<div class="space-y-6">
+<h1 class="text-6xl font-extrabold leading-tight text-white md:text-8xl lg:text-9xl">
+                            Visual <br class="hidden md:block"/> Perfection.
+                        </h1>
+<p class="mx-auto max-w-xl text-lg text-white/50 font-light tracking-wide md:text-xl">
+                            A curated archive of the world's most evocative royalty-free imagery.
+                        </p>
+</div>
+<div class="mx-auto max-w-3xl">
+<div class="glass-search flex w-full items-stretch rounded-none p-1">
+<div class="flex items-center justify-center pl-6 text-white/40">
+<span class="material-symbols-outlined font-light">search</span>
+</div>
+<input class="w-full border-none bg-transparent px-6 py-5 text-white placeholder-white/30 focus:ring-0 text-lg font-light" placeholder="Search the archive..." type="text"/>
+<button class="bg-white px-10 text-black font-bold text-xs uppercase tracking-widest transition-all hover:bg-white/90">
+                                Search
+                            </button>
+</div>
+<div class="mt-6 flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-white/30">
+<span class="text-white/50">Trending</span>
+<a class="hover:text-white transition-colors" href="#">Landscape</a>
+<a class="hover:text-white transition-colors" href="#">Editorial</a>
+<a class="hover:text-white transition-colors" href="#">Architecture</a>
+<a class="hover:text-white transition-colors" href="#">Abstract</a>
+</div>
+</div>
+</div>
+</section>
+<section class="mx-auto max-w-7xl px-6 py-32 lg:px-20">
+<div class="flex items-end justify-between mb-16">
+<div>
+<h2 class="text-4xl font-bold tracking-tighter uppercase">Categories</h2>
+<p class="text-white/40 mt-2 font-light tracking-wide uppercase text-[10px]">Thematic exploration</p>
+</div>
+<a class="text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-white transition-colors border-b border-white/20 pb-1" href="#">See All</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+<div class="group relative h-[30rem] overflow-hidden cursor-pointer">
+<img alt="Forest landscape" class="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Sunlight filtering through a dense green forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_1sITbvZyi7lXaetAXNtrmbKTjOlyDz8sYx1kC0xW-LUkf4_HBz300ki23AW2OCUo1fMK3l11iCI57ho7aS2tDnwCejtUIDPyAGWvHii5mF8b8pEgyYZYfxDmXG-bfDIG7jeBHouhkVjrfSanPzfEVyAYSLFlf7-Q6oIMfdaNhW073nj0S-HdQQxJSqFN1q5a08jngsPVR_3cyrOzYYItCx8JAGJwVNeok0uBYqJ6i2tDmUR77N3LeSf-5g6qsaY6phwHdD5izskt"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute bottom-10 left-10">
+<p class="text-2xl font-bold text-white uppercase tracking-tighter">Nature</p>
+<p class="text-[10px] font-bold uppercase tracking-widest text-white/60">12.4k images</p>
+</div>
+</div>
+<div class="group relative h-[30rem] overflow-hidden cursor-pointer">
+<img alt="Modern building" class="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Sleek glass and steel modern skyscraper architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKDIK0pXFb6D74CKxoZ3twUC-C-q5FGqc_hc4S14kW9GHDhTs3eL-SoRda8A_bLBSKDUiryytfLwQsMGdSiZp5m_0U6cAPqS4JsbSsSqpsF0Z4CElrzm4_o4Ac6oHuSE3lL4bnYfBEw7wK1NesWhiMZfkMwyCFwbrKFFzWyf8BKC66dZsVpZsX0zcuC3kcrLvvWQUyFdPXdTuqgDI2chQByD9WU-qFDwsZP6qsCDTaEIXlcbrlVGJqXnbUHmLqUH57JThhQ-1l5OX7"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute bottom-10 left-10">
+<p class="text-2xl font-bold text-white uppercase tracking-tighter">Architecture</p>
+<p class="text-[10px] font-bold uppercase tracking-widest text-white/60">8.9k images</p>
+</div>
+</div>
+<div class="group relative h-[30rem] overflow-hidden cursor-pointer">
+<img alt="Minimalist desk" class="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Clean minimalist workspace with a simple lamp and plant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfiT5oSEPJ4ei9AALE--Bh9yE5Og93o9sBIXDDFXkgdIuf7AdmKmdv3WM3-tzEHIuOyyCnmTlIu4VcEC-PSfdKGndS8CG-IKun0hRaX_gO22qzfCO9T3G2DaQbphvFpZtKzYCZoOm7mzNPUaLfqbdqz8F6ZZSbA-kdLowGQFt28Z0XmrgMalFPx3s8T8b6jS5jFIts59ctgWwg7LqW_JG6FVyjoPCtjJrgXEzlZVjyaxYPtmAE0LmnZOgEjzVDymA9fKIXNERQ-0yn"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute bottom-10 left-10">
+<p class="text-2xl font-bold text-white uppercase tracking-tighter">Minimal</p>
+<p class="text-[10px] font-bold uppercase tracking-widest text-white/60">15.2k images</p>
+</div>
+</div>
+</div>
+</section>
+<section class="mx-auto max-w-[95rem] px-6 py-32 lg:px-10 bg-noir-gray-dark mb-20 border-y border-white/5">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20 px-10">
+<div>
+<h2 class="text-4xl font-bold tracking-tighter uppercase">The Collection</h2>
+<p class="text-white/40 mt-2 font-light tracking-wide uppercase text-[10px]">Hand-selected masterworks</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-noir-gray-light p-3 hover:bg-white hover:text-black transition-all">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+</button>
+<button class="bg-white text-black px-6 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white/80 transition-all">
+                            Newest First
+                        </button>
+</div>
+</div>
+<div class="masonry px-10">
+<div class="masonry-item group relative overflow-hidden bg-noir-black">
+<img alt="Abstract art" class="w-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="Vibrant abstract acrylic paint swirl pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL-a0c582hJYRsX6qjTWgYFwZuW-h3IJnG9_LT7JhAXWnVCgcvMKk9MzFiMpXDEkYrG2yLvCuFMPT_vROSjxlSUzRmNl0-44sSI0SLgkFrHM2En6rUuEKRJGZxtGmuc36NSQBuZUZNja-MmJ7MShhED7i2TQ5xgG9Ox6neqxTcOD1a2qq0dqZ6ejk-Xn247_KX076QlWnrzSjYA-tOZ5-WMT4WdtGBkWn6jsR1ynlcSoZKHdAZs5jPMFHtAeHJMDyEagZd6Oy0--yI"/>
+<div class="absolute inset-0 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex w-full items-center justify-between text-white">
+<div class="flex items-center gap-3">
+<div class="size-6 bg-white/20"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Elena Rose</span>
+</div>
+<span class="material-symbols-outlined cursor-pointer hover:scale-125 transition-transform">download_2</span>
+</div>
+</div>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-noir-black">
+<img alt="Valley view" class="w-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="Deep valley with high cliffs and waterfalls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC13xAoZ1f3O5LVE8w6QRumS2vukQAEhEwauH9jDRjL0m5om5U9CNpeU0OXJxVHl6s7L3bnP2XSlUKPFEH8v0erGs47JSjgJpltI0fC0MLfJhP2JBklY-aVRGHkGChCpRZNJ1hIMz6Eg7dlShXs5n6Gc3adwtCcfvEryO0y-hXgq1xKqX9zC_HahTm2iVoRQE0w1sdfsTGPUZfH13LJWZXAqxdE7o4DC6pAaSwSjADe0IrI_lUoOrFBizw2PRLO8XC0ocaTGBW3oj7V"/>
+<div class="absolute inset-0 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex w-full items-center justify-between text-white">
+<div class="flex items-center gap-3">
+<div class="size-6 bg-white/20"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Marc J.</span>
+</div>
+<span class="material-symbols-outlined cursor-pointer hover:scale-125 transition-transform">download_2</span>
+</div>
+</div>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-noir-black">
+<img alt="Ocean cliffs" class="w-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="Dramatic sea cliffs meeting crashing ocean waves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOK3fHZXzX1d1ZopvNg9Lp9MEgECukSBEYhihRLIeDqp83_s6fGBHlZA8T0PkuUodnEPk7PhxyHerqLD0VtyQNcW9JkDjNrkGavjeCIucYL7izHLcCGtumsuMv2q2MWgEyJqRgovGEwZjP1nXZcX-Z3LHK-9zBv7kqSdS6JxFJdb4Z30xLUrv8KX77ToI-IGyRgy6-y9xCGcAuXVK83Wc4zHZyA9q73M69hnm1FChjG3Gj7P_EAv3OK9LK6Su2TwePQUCG5DKW3Rkl"/>
+<div class="absolute inset-0 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex w-full items-center justify-between text-white">
+<div class="flex items-center gap-3">
+<div class="size-6 bg-white/20"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Ocean Vibes</span>
+</div>
+<span class="material-symbols-outlined cursor-pointer hover:scale-125 transition-transform">download_2</span>
+</div>
+</div>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-noir-black">
+<img alt="Modern watch" class="w-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="Luxury wrist watch on a clean studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxh1yJrpvXQBw0yorUt5VGm-XklfxsFC6T8Lkguqa7wR_IiS4Z5pCSj39qrrNy-qGLvUc2v22QDoJkCijcV5Jg2f-ozjhPHF_W7-zFCoZxTrfo4_J3AZrg96Ywplk0su_F_NbApthvCYeAZ2l_r_Q2tbzqy7k01Ihq6_NvqQGFs8CjAOhSsFID6z9xXZa5y4ztDuGIXFn3C7xQxsoJqj4Na8YU4DWbO6_Ktc7Yl-euemiGrTI8Z-FeZlVi42M9lfX7yeV4JFPz-UN_"/>
+<div class="absolute inset-0 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex w-full items-center justify-between text-white">
+<div class="flex items-center gap-3">
+<div class="size-6 bg-white/20"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Product Lab</span>
+</div>
+<span class="material-symbols-outlined cursor-pointer hover:scale-125 transition-transform">download_2</span>
+</div>
+</div>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-noir-black">
+<img alt="Mountain peak" class="w-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="Snow covered mountain peak against blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvY4tErwwFBddee24v6tYtG5qVhG8NP-wwJEQf5PDhYEWfb9enjxuw7Q_xxEHtEdcqiXJHDg1Z4QmU0eV8vTmiHR_jmC2Aw2cQOZK_Pjp9FaAy3KvNS5ejoLBGu8kps5eMEvTFS5uyb1lH9VtifPGNVS4aO1xwiDzHWxsR1F7IAbRNvESGuDySNg2ZjVZ_Paz6JjUw9qpBNBx-Kq02NtIFjHPzOZjgKh5Fp9-xAPFwQflI5_M6h0PxOqSokVV1Rxx9ZJKR6KSTMprs"/>
+<div class="absolute inset-0 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex w-full items-center justify-between text-white">
+<div class="flex items-center gap-3">
+<div class="size-6 bg-white/20"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Summit Pix</span>
+</div>
+<span class="material-symbols-outlined cursor-pointer hover:scale-125 transition-transform">download_2</span>
+</div>
+</div>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-noir-black">
+<img alt="Neon city" class="w-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="Futuristic city street with neon signs at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwT6w9T2frUjHn9EKHNVeKPoBX_McL5tQepivhslrfqaZwnL7bSRxReV9CR8YZUFZcl3quTGbtFCh5GSzw680hlbJfpQAEjRfDTpTq2JIZOXLtEbxg27Vxhf1DygxYiFH6evN1HGazLNaRf0B_Gv6gzdu3bSnTn6SSSCY_oUDmPyUA2ZGnTXOWPGvRfdOhCL0ealDRwu4rzXvEw-HjkveRvmwBNNqTLmC5Ka85lA6w-o6etf_qVZB3HY9K3djHBp2Bh5xAscLUFFFD"/>
+<div class="absolute inset-0 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex w-full items-center justify-between text-white">
+<div class="flex items-center gap-3">
+<div class="size-6 bg-white/20"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Cyber Lens</span>
+</div>
+<span class="material-symbols-outlined cursor-pointer hover:scale-125 transition-transform">download_2</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-24 text-center">
+<button class="inline-flex items-center gap-4 border border-white/20 px-12 py-5 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all">
+                        Discover Archive <span class="material-symbols-outlined text-sm">east</span>
+</button>
+</div>
+</section>
+</main>
+<footer class="border-t border-white/5 bg-noir-black py-24 px-6 lg:px-20">
+<div class="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-20">
+<div class="space-y-6 col-span-1 md:col-span-1">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-2xl font-light">camera</span>
+<h2 class="text-xl font-bold tracking-widest uppercase">iNSpix</h2>
+</div>
+<p class="text-[11px] leading-relaxed font-light tracking-wide text-white/40 uppercase">
+                        The premiere destination for high-end cinematic imagery. Curated for the modern creative professional.
+                    </p>
+</div>
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-widest mb-8">Discover</h4>
+<ul class="space-y-4 text-[10px] font-bold uppercase tracking-widest text-white/30">
+<li><a class="hover:text-white transition-colors" href="#">The Archive</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Curated Sets</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Global Topics</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Trending</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-widest mb-8">Company</h4>
+<ul class="space-y-4 text-[10px] font-bold uppercase tracking-widest text-white/30">
+<li><a class="hover:text-white transition-colors" href="#">Editorial Team</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Licensing</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-widest mb-8">Newsletter</h4>
+<p class="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-6">Exclusive previews to your inbox.</p>
+<div class="flex border-b border-white/20 pb-2">
+<input class="w-full bg-transparent border-none px-0 py-2 focus:ring-0 text-[10px] uppercase font-bold tracking-widest placeholder-white/20" placeholder="Email Address" type="email"/>
+<button class="text-white hover:opacity-50 transition-opacity">
+<span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mx-auto max-w-7xl mt-24 pt-12 border-t border-white/5 text-center text-[9px] font-bold uppercase tracking-[0.4em] text-white/20">
+                © 2024 iNSpix Noir. Designed for Excellence.
+            </div>
+</footer>
+</div>
+</body></html>

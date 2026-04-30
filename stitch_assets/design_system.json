@@ -1,0 +1,15 @@
+{
+  "name": "assets/796ab05386f44e72893ec89cbd9762b4",
+  "displayName": "iNSpix Lumina",
+  "theme": {
+    "colorMode": "DARK",
+    "font": "MANROPE",
+    "roundness": "ROUND_EIGHT",
+    "customColor": "#0d7ff2",
+    "namedColors": {
+      "background": "#10131a",
+      "primary": "#a9c7ff",
+      "surface": "#10131a"
+    }
+  }
+}

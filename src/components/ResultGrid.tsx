@@ -69,11 +69,11 @@ const ResultGrid = () => {
     if (loading) return <LoadingSpinner />
 
     return (
-        <div className='flex justify-between w-full flex-wrap gap-6 overflow-auto px-10 pb-10'>
+        <div className='masonry w-full px-6 pb-20'>
             {results.map((item, idx) => {
-                return <div key={`${item.id}-${idx}`}>
-                    <ResultCard item={item} />
-                </div>
+                return (
+                    <ResultCard key={`${item.id}-${idx}`} item={item} />
+                )
             })}
         </div>
     )
