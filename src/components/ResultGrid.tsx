@@ -3,7 +3,7 @@ import { fetchPhotos, fetchVideos, fetchGIF } from '../api/mediaApi'
 import { setLoading, setError, setResults } from '../redux/features/searchSlice'
 import { useEffect } from 'react'
 import ResultCard from './ResultCard'
-import LoadingSpinner from './LoadingSpinner'
+import SkeletonCard from './SkeletonCard'
 
 interface MediaData {
     id: string | number;
@@ -65,15 +65,24 @@ const ResultGrid = () => {
         getData()
     }, [query, activeTab, dispatch])
 
-    if (error) return <h1 className="text-center text-red-500 mt-10">Error: {error}</h1>
-    if (loading) return <LoadingSpinner />
+    if (error) return <h1 className="text-center text-red-500 mt-10 p-20 font-black uppercase tracking-widest glass rounded-3xl mx-6">Error: {error}</h1>
+    
+    if (loading) {
+        return (
+            <div className='masonry w-full px-6 pb-20'>
+                {[400, 300, 500, 350, 450, 300, 500, 400, 350, 450].map((h, i) => (
+                    <SkeletonCard key={i} height={`${h}px`} />
+                ))}
+            </div>
+        )
+    }
 
     return (
-        <div className='flex justify-between w-full flex-wrap gap-6 overflow-auto px-10 pb-10'>
+        <div className='masonry w-full px-6 pb-20'>
             {results.map((item, idx) => {
-                return <div key={`${item.id}-${idx}`}>
-                    <ResultCard item={item} />
-                </div>
+                return (
+                    <ResultCard key={`${item.id}-${idx}`} item={item} />
+                )
             })}
         </div>
     )

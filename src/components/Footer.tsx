@@ -1,57 +1,37 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <footer className="border-t border-white/5 bg-slate-950 py-16 px-6 lg:px-20 text-slate-300">
-            <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
-                <div className="space-y-4 col-span-1 md:col-span-1">
-                    <div className="flex items-center justify-center md:justify-start gap-2 text-blue-500">
-                        <span className="material-symbols-outlined text-3xl font-bold">layers</span>
-                        <h2 className="text-xl font-extrabold tracking-tight text-white">iNSpix</h2>
+        <footer className="w-full bg-[#0a0a0a] border-t border-white/[0.03] py-16 px-6 lg:px-20">
+            <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-12">
+                {/* Brand Side */}
+                <Link to="/" className="flex items-center gap-4 group">
+                    <div className="w-10 h-10 rounded-xl bg-white/[0.05] flex items-center justify-center border border-white/[0.1] group-hover:border-[#a078ff]/30 transition-all duration-500">
+                        <span className="material-symbols-outlined text-[#a078ff] text-xl font-black">layers</span>
                     </div>
-                    <p className="text-sm text-slate-500 max-w-xs mx-auto md:mx-0">
-                        The world's most generous community of photographers and creators. High-quality imagery for everyone, built with Redux Toolkit and TypeScript.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 className="font-bold mb-6 text-white uppercase text-xs tracking-widest">Discover</h4>
-                    <ul className="space-y-4 text-sm text-slate-500">
-                        <li><a className="hover:text-blue-500 transition-colors" href="#">Free Images</a></li>
-                        <li><a className="hover:text-blue-500 transition-colors" href="#">Collections</a></li>
-                        <li><a className="hover:text-blue-500 transition-colors" href="#">Topics</a></li>
-                        <li><a className="hover:text-blue-500 transition-colors" href="#">Trending</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 className="font-bold mb-6 text-white uppercase text-xs tracking-widest">Company</h4>
-                    <ul className="space-y-4 text-sm text-slate-500">
-                        <li><a className="hover:text-blue-500 transition-colors" href="#">About Us</a></li>
-                        <li><a className="hover:text-blue-500 transition-colors" href="#">Our API</a></li>
-                        <li><a className="hover:text-blue-500 transition-colors" href="#">Privacy Policy</a></li>
-                        <li><a className="hover:text-blue-500 transition-colors" href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 className="font-bold mb-6 text-white uppercase text-xs tracking-widest">Newsletter</h4>
-                    <p className="text-sm text-slate-500 mb-6">Get the best images directly in your inbox.</p>
-                    <div className="flex gap-2 max-w-sm mx-auto md:mx-0">
-                        <input 
-                            className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-2 text-sm focus:ring-1 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-600" 
-                            placeholder="Email address" 
-                            type="email"
-                        />
-                        <button className="bg-blue-600 p-2 rounded-lg text-white hover:bg-blue-500 transition-all shadow-lg shadow-blue-500/20 active:scale-95">
-                            <span className="material-symbols-outlined text-base">send</span>
-                        </button>
+                    <div>
+                        <h2 className="text-xl font-black tracking-tighter text-white uppercase italic leading-none">iNSpix</h2>
+                        <p className="text-[9px] font-black tracking-[0.4em] text-[#4a4a4a] uppercase mt-1">Noir Luxe Archive</p>
                     </div>
+                </Link>
+
+                {/* Navigation Side */}
+                <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+                    <Link to="/" className="text-[10px] font-black uppercase tracking-[0.3em] text-[#958ea0] hover:text-white transition-all duration-300">Archive</Link>
+                    <Link to="/about" className="text-[10px] font-black uppercase tracking-[0.3em] text-[#958ea0] hover:text-white transition-all duration-300">The Story</Link>
+                    <Link to="/collection" className="text-[10px] font-black uppercase tracking-[0.3em] text-[#958ea0] hover:text-white transition-all duration-300">Collections</Link>
+                    <a href="https://github.com/SanidhyaGupta-10/iNSpix" target="_blank" rel="noreferrer" className="text-[10px] font-black uppercase tracking-[0.3em] text-[#d0bcff] hover:text-white transition-all duration-300">Contribute</a>
                 </div>
-            </div>
-            
-            <div className="mx-auto max-w-7xl mt-16 pt-8 border-t border-white/5 text-center text-xs text-slate-600">
-                © {new Date().getFullYear()} iNSpix. Built with React, Redux Toolkit, and Tailwind CSS.
+
+                {/* Social/Copy Side */}
+                <div className="flex flex-col items-center md:items-end gap-4 text-[9px] font-black tracking-[0.2em] text-[#333333] uppercase">
+                    <div className="flex gap-8 text-[#958ea0]">
+                        <a href="http://instagram.com/sanidhyagupta10" target="_blank" rel="noreferrer" className="hover:text-[#a078ff] transition-colors">Instagram</a>
+                        <a href="https://github.com/SanidhyaGupta-10" target="_blank" rel="noreferrer" className="hover:text-[#a078ff] transition-colors">GitHub</a>
+                    </div>
+                    <p>© {new Date().getFullYear()} iNSpix. OPEN SOURCE ARCHIVE.</p>
+                </div>
             </div>
         </footer>
     )
