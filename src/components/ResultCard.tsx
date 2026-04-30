@@ -7,7 +7,6 @@ interface ResultCardProps {
     item: MediaItem;
 }
 
-
 const ResultCard: React.FC<ResultCardProps> = ({ item }) => {
     const dispatch = useAppDispatch()
 
@@ -17,34 +16,57 @@ const ResultCard: React.FC<ResultCardProps> = ({ item }) => {
     }
 
     return (
-        <div className='masonry-item relative bg-[#0e0e0e] rounded-3xl overflow-hidden group border border-white/5 transition-all duration-500 hover:border-[#a078ff]/30 hover:shadow-[0_0_40px_rgba(139,92,246,0.1)]'>
-            <a target='_blank' rel="noreferrer" className='block overflow-hidden' href={item.url}>
-                {item.type === 'photo' && <img className='w-full object-cover object-center transition duration-700 group-hover:scale-110' src={item.src} alt={item.title} />}
-                {item.type === 'video' && <video className='w-full object-cover object-center transition duration-700 group-hover:scale-110' autoPlay loop muted src={item.src}></video>}
-                {item.type === 'gif' && <img className='w-full object-cover object-center transition duration-700 group-hover:scale-110' src={item.src} alt={item.title} />}
+        <div className='masonry-item relative bg-[#0e0e0e] rounded-[2rem] overflow-hidden group border border-white/[0.03] transition-all duration-700 hover:border-[#a078ff]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_30px_rgba(160,120,255,0.05)]'>
+            <a target='_blank' rel="noreferrer" className='block overflow-hidden relative' href={item.url}>
+                {item.type === 'photo' && <img className='w-full object-cover object-center transition-transform duration-1000 group-hover:scale-110' src={item.src} alt={item.title} />}
+                {item.type === 'video' && <video className='w-full object-cover object-center transition-transform duration-1000 group-hover:scale-110' autoPlay loop muted src={item.src}></video>}
+                {item.type === 'gif' && <img className='w-full object-cover object-center transition-transform duration-1000 group-hover:scale-110' src={item.src} alt={item.title} />}
+                
+                {/* Subtle dark gradient overlay */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </a>
             
             {/* Action Bar */}
-            <div className='absolute inset-x-4 bottom-4 glass rounded-[1.25rem] p-4 flex justify-between items-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500'>
-                <div className="flex-1 min-w-0 mr-3">
-                    <h2 className='text-xs font-bold text-white truncate uppercase tracking-tight' title={item.title}>{item.title}</h2>
-                    <p className="text-[9px] text-[#d0bcff] font-bold uppercase tracking-[0.2em] mt-1">{item.type}</p>
+            <div className='absolute inset-x-3 bottom-3 bg-black/40 backdrop-blur-3xl border border-white/[0.08] rounded-[1.5rem] p-4 flex justify-between items-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-2xl'>
+                <div className="flex-1 min-w-0 mr-4">
+                    <div className="flex items-center gap-2 mb-1">
+                        <h2 className='text-[11px] font-black text-white truncate uppercase tracking-tighter' title={item.title}>{item.title}</h2>
+                    </div>
+                    <div className="flex items-center gap-2 opacity-60">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#d0bcff]"></div>
+                        <p className="text-[8px] text-[#cbc3d7] font-black uppercase tracking-[0.2em]">{item.type}</p>
+                    </div>
                 </div>
+                
                 <button
                     onClick={(e) => {
                         e.preventDefault()
                         addToCollection(item)
                     }}
-                    className='bg-[#a078ff] text-[#340080] hover:scale-105 active:scale-95 rounded-xl px-5 py-2 cursor-pointer font-bold text-[10px] uppercase tracking-widest transition-all shrink-0 shadow-[0_0_15px_rgba(160,120,255,0.3)]'
+                    className='group/btn relative flex items-center justify-center bg-white text-black hover:bg-[#a078ff] hover:text-white rounded-xl px-6 py-2.5 cursor-pointer font-black text-[9px] uppercase tracking-[0.2em] transition-all duration-300 active:scale-95 shadow-xl'
                 >
-                    Collect
+                    <span className="relative z-10">Collect</span>
+                    <div className="absolute inset-0 bg-[#a078ff] scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left duration-500 rounded-xl"></div>
                 </button>
             </div>
 
-            {/* Type Badge */}
-            <div className="absolute top-4 right-4 glass px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <span className="text-[9px] font-bold text-white uppercase tracking-widest">{item.type}</span>
+            {/* Type Badge (Top Left) */}
+            <div className="absolute top-4 left-4 bg-black/20 backdrop-blur-xl border border-white/10 px-3 py-1.5 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-700 -translate-y-2 group-hover:translate-y-0 flex items-center gap-2">
+                <span className="material-symbols-outlined text-[10px] text-[#d0bcff]">
+                    {item.type === 'photo' ? 'image' : item.type === 'video' ? 'videocam' : 'gif'}
+                </span>
+                <span className="text-[8px] font-black text-white uppercase tracking-widest">{item.type}</span>
             </div>
+            
+            {/* External Link (Top Right) */}
+            <a 
+                href={item.url} 
+                target="_blank" 
+                rel="noreferrer"
+                className="absolute top-4 right-4 bg-white/10 hover:bg-white text-white hover:text-black w-8 h-8 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 translate-x-2 group-hover:translate-x-0 backdrop-blur-xl border border-white/10"
+            >
+                <span className="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
         </div>
     )
 }
